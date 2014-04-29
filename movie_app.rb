@@ -5,12 +5,11 @@ require 'httparty'
 require_relative 'movie'
 
 get '/' do
-  # Just have a nice welcome page
+  "Welcome to The Ultimate Movie Database & add instructions"
 end
 
 post '/film' do
-  # Search for a Movie
-  # HINT - what is in params ?
+  "What is the name of the film you want info on?"
   binding.pry
 
   # Lookup the film information on the web

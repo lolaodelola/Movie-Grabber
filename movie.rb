@@ -1,6 +1,11 @@
 class Movie
 
   # Add attr_accessors for the values you want to store...
+attr_accessor :title
+attr_accessor :year
+attr_accessor :director
+attr_accessor :plot
+attr_accessor :actor
 
   def self.get_film_info(name)
     imdb_data = HTTParty.get("http://www.omdbapi.com/?t=#{name}")
@@ -12,6 +17,11 @@ class Movie
 
     # Fill in the attributes...
 
+    m.title = movie_info["Title"]
+    m.year = movie_info["Year"]
+    m.director = movie_info["Director"]
+    m.plot = movie_info["Plot"]
+    m.actor = movie_info["Actors"]
     # Store me in a database...
   end
 

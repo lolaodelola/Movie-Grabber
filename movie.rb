@@ -5,7 +5,7 @@ attr_accessor :title
 attr_accessor :year
 attr_accessor :director
 attr_accessor :plot
-attr_accessor :actor
+attr_accessor :actors
 
   def self.get_film_info(name)
     imdb_data = HTTParty.get("http://www.omdbapi.com/?t=#{name}")
@@ -21,8 +21,9 @@ attr_accessor :actor
     m.year = movie_info["Year"]
     m.director = movie_info["Director"]
     m.plot = movie_info["Plot"]
-    m.actor = movie_info["Actors"]
-    # Store me in a database...
+    m.actors = movie_info["Actors"]
+    return m
+    binding.pry
   end
 
 end

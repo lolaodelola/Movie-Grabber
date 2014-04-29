@@ -10,7 +10,7 @@ attr_accessor :actors
   def self.get_film_info(name)
     imdb_data = HTTParty.get("http://www.omdbapi.com/?t=#{name}")
     movie_info = JSON(imdb_data)
-    binding.pry
+   # binding.pry
 
     # Create a Movie object...
     m = Movie.new
@@ -23,7 +23,7 @@ attr_accessor :actors
     m.plot = movie_info["Plot"]
     m.actors = movie_info["Actors"]
     return m
-    binding.pry
+  #  binding.pry
   end
 
 end
